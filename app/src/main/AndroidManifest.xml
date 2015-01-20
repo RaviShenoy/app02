@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="apps.myapp.com.app02" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MyActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="apps.myapp.com.app02.MyActivity" />
+        </activity>
+        <activity
+            android:name=".Settings_activity"
+            android:label="@string/title_activity_settings_activity"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="apps.myapp.com.app02.MyActivity" />
+        </activity>
+        <activity
+            android:name=".Search"
+            android:label="@string/title_activity_search"
+            android:parentActivityName=".MyActivity"
+            android:theme="@style/SearchButtonTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="apps.myapp.com.app02.MyActivity" />
+        </activity>
+        <activity
+            android:name=".RecordMessageActivity"
+            android:label="@string/title_activity_record_message" >
+        </activity>
+
+        <service
+            android:name=".RecorderService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name=".BluetoothMenu"
+            android:label="@string/title_activity_bluetooth_menu" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+</manifest>
